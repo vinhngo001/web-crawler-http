@@ -1,10 +1,19 @@
 const { JSDOM } = require("jsdom");
+const fetch = require("node-fetch");
+
+async function crawlPage(currentUrl) {
+    console.log(`actively crawling: ${currentUrl}`);
+
+    const resp = await fetch(currentUrl);
+
+    console.log(await resp.text());
+}
 
 function getURLsFormHTML(htmlBody, baseUrl) {
     const urls = [];
     const dom = new JSDOM(htmlBody);
     const linkElements = dom.window.document.querySelectorAll('a');
-    
+
     for (const linkEl of linkElements) {
         // console.log({ linkEl: linkEl.href });
         if (linkEl.href.slice(0, 1) === "/") {
@@ -31,5 +40,6 @@ function normalizeURL(urlString) {
 
 module.exports = {
     normalizeURL: normalizeURL,
-    getURLsFormHTML: getURLsFormHTML
+    getURLsFormHTML: getURLsFormHTML,
+    crawlPage: crawlPage
 }
