@@ -20,6 +20,9 @@
     },
     "homepage": "https://github.com/vinhngo001/web-crawler-http#readme",
     "devDependencies": {
-        "jest":"^29.3.1"
+        "jest": "^29.3.1"
+    },
+    "dependencies": {
+        "jsdom": "^22.1.0"
     }
 }
