@@ -1,12 +1,25 @@
 {
-  "name": "web-crawler-http",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "name": "web-crawler-http",
+    "version": "1.0.0",
+    "description": "Project for the learn crawler",
+    "main": "main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node main.js"
+    },
+    "keywords": [
+        "crawler",
+        "http",
+        "website"
+    ],
+    "author": "Vinh Ngo",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vinhngo001/web-crawler-http.git"
+    },
+    "homepage": "https://github.com/vinhngo001/web-crawler-http#readme",
+    "devDependencies": {
+        "jest":"^29.3.1"
+    }
 }
