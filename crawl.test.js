@@ -44,16 +44,31 @@ test("getURLsFormHTML", () => {
     expect(actual).toEqual(expected);
 });
 
-test("getURLsFormHTML absolute", () => {
+test("getURLsFormHTML relative", () => {
     const inputHTMLBody = `
         <html>
             <body>
-                <a href="https://blog.boot.dev/">Boot.dev Blog</a>
+                <a href="/path/">Boot.dev Blog</a>
             </body>
         </html>
     `
     const inputBaseURL = "https://blog.boot.dev";
     const actual = getURLsFormHTML(inputHTMLBody, inputBaseURL);
-    const expected = ["https://blog.boot.dev/"];
+    const expected = ["https://blog.boot.dev/path/"];
+    expect(actual).toEqual(expected);
+});
+
+
+test("getURLsFormHTML absolute", () => {
+    const inputHTMLBody = `
+        <html>
+            <body>
+                <a href="https://blog.boot.dev/path/">Boot.dev Blog</a>
+            </body>
+        </html>
+    `
+    const inputBaseURL = "https://blog.boot.dev/path/";
+    const actual = getURLsFormHTML(inputHTMLBody, inputBaseURL);
+    const expected = ["https://blog.boot.dev/path/"];
     expect(actual).toEqual(expected);
 });
