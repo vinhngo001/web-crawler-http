@@ -6,7 +6,7 @@ function getURLsFormHTML(htmlBody, baseUrl) {
     const linkElements = dom.window.document.querySelectorAll('a');
     for (const linkEl of linkElements) {
         console.log({ linkEl: linkEl.href });
-        // urls.push(linkEl);
+        urls.push(linkEl.href);
     }
     return urls;
 }
